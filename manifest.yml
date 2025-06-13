@@ -1,0 +1,17 @@
+zc-sdk-version: "0.1"
+name: QRding
+package: lazycat.community.app.qrding
+version: 0.1.0
+description: simple self-hosted QR code generator
+homepage: https://github.com/rishikanthc/qrding
+author: rishikanthc
+application:
+    subdomain: qrding
+    background_task: true
+    public_path:
+        - /
+    routes:
+        - /=http://qrding:3000/
+services:
+    qrding:
+        image: registry.lazycat.cloud/czyt/rishikanthc/qrding:3f10890a82c9dad1
