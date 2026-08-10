@@ -1,0 +1,12 @@
+application:
+  subdomain: qrding
+  background_task: true
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://qrding:3000/
+
+services:
+  qrding:
+    image: ghcr.io/rishikanthc/qrding:v0.1.2

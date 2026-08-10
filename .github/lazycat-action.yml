@@ -1,0 +1,46 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/application.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: qrding
+
+build:
+  run_buildscript: false
+
+images:
+  - id: qrding
+    target: service
+    service: qrding
+    source: ghcr.io/rishikanthc/qrding
+    channel: stable
+    sort: semver
+    tag_regex: '^v?0\.\d+\.\d+$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    create_if_missing: true
+    application:
+      language: en
+      name: QRding
+      source: https://github.com/rishikanthc/qrding
+      source_author: rishikanthc
+    retry:
+      enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: QRding
