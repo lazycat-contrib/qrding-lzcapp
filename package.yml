@@ -6,5 +6,10 @@ homepage: https://github.com/rishikanthc/qrding
 author: rishikanthc
 license: MIT
 locales:
-  - en
+  en:
+    name: QRding
+    description: simple self-hosted QR code generator
+  zh-CN:
+    name: QRding
+    description: 简单的自托管二维码生成器
 min_os_version: 1.5.0
