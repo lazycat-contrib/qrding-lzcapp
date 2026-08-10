@@ -6,7 +6,7 @@ application:
   upstreams:
     - location: /
       backend: http://qrding:3000/
-
 services:
   qrding:
-    image: ghcr.io/rishikanthc/qrding:v0.1.2
+    # upstream: ghcr.io/rishikanthc/qrding:v0.1.2
+    image: registry.lazycat.cloud/czyt/rishikanthc/qrding:04a76d53ce6181d6
